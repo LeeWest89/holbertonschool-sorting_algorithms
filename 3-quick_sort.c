@@ -60,7 +60,7 @@ void quick_sort_recursion(int *array, size_t size, int low, int high)
 }
 
 /**
- * void quick_sort - sorts an array of integers with Quick sort
+ * quick_sort - sorts an array of integers with Quick sort
  *
  * @array: the array being sorted
  * @size: the sizeof the array
