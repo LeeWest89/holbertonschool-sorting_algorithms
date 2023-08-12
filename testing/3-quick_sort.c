@@ -2,6 +2,14 @@
 #include "swap.c"
 
 /**
+ * partition - partitions the array
+ *
+ * @array:the array to be sorted
+ * @size: the size of the array
+ * @low: the first element of the array
+ * @high: the last element of the array
+ *
+ * Return: returns i
  */
 
 int partition(int *array, size_t size, int low, int high)
@@ -15,16 +23,29 @@ int partition(int *array, size_t size, int low, int high)
 	{
 		if (array[j] <= pivot)
 		{
-			swap(&array[i], &array[j]);
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 			i++;
 		}
 	}
-	swap(&array[i], &array[high]);
-	print_array(array, size);
+	if (i != high)
+	{
+		swap(&array[i], &array[high]);
+		print_array(array, size);
+	}
 	return (i);
 }
 
 /**
+ * quick_sort_recursion - sorts recursively
+ *
+ * @array:the array to be sorted
+ * @size: the size of the array
+ * @low: the first element of the array
+ * @high: the last element of the array
  */
 void quick_sort_recursion(int *array, size_t size, int low, int high)
 {
